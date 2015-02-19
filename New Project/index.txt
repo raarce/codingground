@@ -1,0 +1,131 @@
+= Asignación 923
+//Firstname Lastname <author@asciidoctor.org>
+//1.0, July 29, 2014, Asciidoctor 1.5 article template
+//:toc:
+:icons: font
+:source-highlighter: highlightjs
+:quick-uri: http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/
+:toc: left
+:author: Rafael Arce Nazario
+:email: rafael.arce@upr.edu
+
+
+En esta asignación vas a implementar algunas funciones que utilizan objetos de 
+clase `string`. Todas las funciones serán creadas dentro del file main.cpp que
+proveemos en _____.
+
+El file incluye los prototipos de todas las funciones y su documentación. 
+Además, hay proveemos un unit test para cada una de las funciones.
+
+== Ejercicio 1
+
+Completa la función `bool sonCruzadas(const string &st)` para que realice
+lo que se describe en su documentación. 
+
+En la función `main`, añade una invocación a `test_sonCruzadas()`. Si al ejecutar el programa 
+obtienes el mensaje
+----
+`Felicidades, la funciona sonCruzadas paso todas las pruebas!!!!`
+----
+, entonces tu 
+implementación fue valida (según el unit test).
+
+
+== Ejercicio 2
+
+Completa la función `bool muchasAs(const string &st)` para que realice
+lo que se describe en su documentación. 
+
+En la función `main`, añade una invocación a `test_muchasAs()`. Si al ejecutar el programa 
+obtienes el mensaje
+----
+`Felicidades, la funciona muchasAs paso todas las pruebas!!!!`
+----
+, entonces tu 
+implementación fue valida (según el unit test).
+
+
+== Ejercicio 3
+
+
+Completa la función `bool simetrica(const string &st)` para que realice
+lo que se describe en su documentación. 
+
+En la función `main`, añade una invocación a `test_simetrica()`. Si al ejecutar el programa 
+obtienes el mensaje
+----
+`Felicidades, la funciona simetrica paso todas las pruebas!!!!`
+----
+, entonces tu 
+implementación fue valida (según el unit test).
+
+
+
+
+El formato de uso de `cin` es:
+[source,cpp]
+----
+cin >> var;
+----
+
+Donde `var` es una variable del tipo de dato que se esté esperando de parte del usuario. El operador `>>` es llamado el _stream extraction operator_. Al usar el objeto `cin` en combinación con el _ stream extracion operator_ estamos instruyendo al programa que reciba del sistema operativo los caracteres que el usuario ha entrado, que los convierta en un dato del tipo de _var_ y que lo asigne a _var_.
+
+Cuando hemos solicitado más de un dato al usuario, podemos usar `cin` de la siguiente forma para recoger ambos datos y asignarlos a sus variables correspondientes.
+
+[source,cpp]
+----
+cin >> var1 >> var2;
+----
+
+Donde `var1` y `var2` son variables que pueden ser de distintos tipos.
+
+Siempre que vayas a pedir uno o más datos al usuario usando cin, debes antes desplegar en pantalla un mensaje al usuario sobre lo que estás pidiendo.  Por ejemplo:
+
+[source,cpp]
+----
+int height;
+
+cout << "Entre su altura: ";
+cin  >> height;
+----
+
+Al usar `cin` con `<<` cada vez que el usario entra un espacio se considera que desea entrar un nuevo dato. Por ejemplo:
+
+[source,cpp]
+----
+int height, weight;
+
+cout << "Entre su altura y peso: ";
+cin  >> height >> weight;
+----
+
+Si el usuario entra `"80 175"` (sin las comillas), `cin` interpreta lo entrado por el usuario como dos datos distintos separados por espacio. 
+
+Si desea que se guarde toda la línea de caracteres entrados por el usuario incluyendo los espacios debe hacerlo usando la función `getline`:
+
+[source,cpp]
+----
+string a;
+cout << "Entre su nombre completo:"
+getline(cin, a);
+----
+
+Si el usuario entrara `"Juan de los Parlotes"`, el string completo se grabará en la variable a.
+
+== cout
+
+El formato de uso más frecuente de `cout` es:
+[source,cpp]
+----
+cout << literal o variable o símbolo predefinido
+----
+
+El operador `<<` se llama el _stream insertion operator_. Al usar `<<` en combinación con el objeto `cout` estamos indicando que deseamos que nuestro programa se comunique con el sistema operativo para desplegar literal o valor de la variable en el terminal. 
+
+Para separar los literales y/o variables que deseamos desplegar en el terminal, debemos usar el operador `<<`. Por ejemplo:
+[source,cpp]
+----
+cout << "Este es el valor de la variable x: " << x << endl;
+----
+
+
